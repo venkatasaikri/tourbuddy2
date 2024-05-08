@@ -1,0 +1,52 @@
+:root{
+    --PrimaryColor: hsl(199, 100%, 33%);
+}
+
+// src/components/Login.scss
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+  
+    h2 {
+      text-align: center;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      .form-group {
+        margin-bottom: 20px;
+  
+        label {
+          margin-bottom: 5px;
+        }
+  
+        input {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+  
+      button {
+        padding: 10px;
+        background: var(--PrimaryColor);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+
+  .loginsection{
+    margin: 10rem;
+  }
+  

@@ -1,0 +1,252 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+  --cardHover: rgb(255, 255, 255);
+}
+
+.main {
+  width: 100%;
+
+  .secTitle {
+    .title {
+      position: relative;
+      width: max-content;
+      color: var(--textColor);
+      margin: 0.5rem 0 0.2rem 2rem;
+      z-index: 2;
+
+      &::after {
+        position: absolute;
+        content: "";
+        background: var(--SecondaryColor);
+        height: 5px;
+        width: 110px;
+        right: 0;
+        bottom: 5px;
+        z-index: -1;
+      }
+    }
+  }
+
+  .secContent {
+    
+    justify-content: center;
+
+    .singleDestination {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      
+
+      .imageDiv {
+        height: 180px;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 1rem;
+          padding: 0.5rem;
+          object-fit: cover;
+          transition: 0.5s ease-in-out;
+        }
+
+        &:hover {
+          img {
+          border-radius: 2rem;
+          object-fit: cover;
+           
+          }
+        }
+      }
+
+      .cardInfo {
+        padding: .5rem;
+
+        .destTitle {
+          color: var(--blackColor);
+          font-size: 1rem;
+        }
+
+        .continent {
+          gap: 0.5rem;
+
+          .icon {
+            color: var(--textColor);
+            font-size: 18px;
+          }
+        }
+
+        .fees {
+          width: 100%;
+          justify-content: space-between;
+          padding: 1rem 1rem 1rem 0.2rem;
+          margin: 1rem 0;
+          border-top: 1.5px solid var(--greyText);
+          border-bottom: 1.5px solid var(--greyText);
+
+          .grade {
+            color: var(--textColor);
+            max-width: 150px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            small {
+              text-align: center;
+              background: var(--gradientColor);
+              border-radius: 1rem;
+              color: var(--whiteColor);
+              padding: 1px 10px;
+              font-size: 10px;
+            }
+          }
+        }
+
+        .desc {
+          font-size: 13.5px;
+          color: var(--textColor);
+          font-weight: 500;
+        }
+        .btn_more {
+          display: flex;
+          justify-content: center;
+        }
+        .btn {
+          color: var(--whiteColor);
+          font-weight: 600;
+          justify-content: space-between;
+          gap: 0.5rem;
+
+          .icon {
+            align-self: center;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.singleDestination {
+  border-radius: 1rem;
+
+  background: white;
+  transition: 1s box-shadow;
+}
+
+.singleDestination:hover {
+  box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
+}
+
+.singleDestination:hover::before,
+.singleDestination:hover::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fda8cf;
+   border-radius: 1rem;
+  z-index: -1;
+  animation: 1s clockwise infinite;
+}
+
+.singleDestination:hover:after {
+  background: #f3ce5e;
+  animation: 2s counterclockwise infinite;
+}
+
+@keyframes clockwise {
+  0% {
+    top: -5px;
+    left: 0;
+  }
+  12% {
+    top: -2px;
+    left: 2px;
+  }
+  25% {
+    top: 0;
+    left: 5px;
+  }
+  37% {
+    top: 2px;
+    left: 2px;
+  }
+  50% {
+    top: 5px;
+    left: 0;
+  }
+  62% {
+    top: 2px;
+    left: -2px;
+  }
+  75% {
+    top: 0;
+    left: -5px;
+  }
+  87% {
+    top: -2px;
+    left: -2px;
+  }
+  100% {
+    top: -5px;
+    left: 0;
+  }
+}
+
+@keyframes counterclockwise {
+  0% {
+    top: -5px;
+    right: 0;
+  }
+  12% {
+    top: -2px;
+    right: 2px;
+  }
+  25% {
+    top: 0;
+    right: 5px;
+  }
+  37% {
+    top: 2px;
+    right: 2px;
+  }
+  50% {
+    top: 5px;
+    right: 0;
+  }
+  62% {
+    top: 2px;
+    right: -2px;
+  }
+  75% {
+    top: 0;
+    right: -5px;
+  }
+  87% {
+    top: -2px;
+    right: -2px;
+  }
+  100% {
+    top: -5px;
+    right: 0;
+  }
+}
